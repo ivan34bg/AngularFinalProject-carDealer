@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { CarAdsModule } from './car-ads/car-ads.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 
@@ -14,7 +15,8 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    UserModule
+    UserModule,
+    CarAdsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

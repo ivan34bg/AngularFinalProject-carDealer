@@ -1,25 +1,19 @@
 .container{
     color: white;
     font-family: 'Bebas Neue', cursive;
-    background-image: url("/assets/road.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-.login{
-    background-color: black;
+    background: black;
     position: relative;
-    top: 35vh;
+    top: 30vh;
     left: 28vw;
-    width: 34%;
-    height: 31%;
+    width: 28%;
+    padding: 20px 0px;
     border-radius: 10px;
-    padding: 15px 0px;
 }
 fieldset{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 0px;
 }
 .field{
     display: flex;
@@ -60,10 +54,10 @@ input:focus textarea:focus{
     align-items: center;
 }
 .register-center a{
-    font-size: 22px;
+    font-size: 24px;
     color: white;
     text-decoration: none;
 }
-.register-center a:hover{
+.register-center a:hover, button:hover{
     color: rgb(255, 174, 0);
 }

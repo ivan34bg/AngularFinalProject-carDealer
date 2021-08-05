@@ -1,0 +1,74 @@
+.container{
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    background: black;
+    position: relative;
+    top: 10vh;
+    left: 22vw;
+    width: 40%;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+.create-ad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0px;
+}
+button, input, textarea{
+    border: 3px solid rgb(255, 174, 0);
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    letter-spacing: 1.4px;
+}
+input{
+    width: 100%;
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 18px;
+    appearance: textfield;
+}
+label{
+    font-size: 18px;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 80px;
+    align-items: center;
+}
+.first-group, .second-group, .third-group, .fourth-group{
+    display: flex;
+}
+.description{
+    width: 83%;
+}
+.description textarea{
+    resize: none;
+    width: 90%;
+    height: 160px;
+    padding: 10px 5%;
+    font-size: 18px;
+}
+.create-buttons{
+    width: 83%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+.create-buttons button{
+    font-size: 18px;
+    width: 40%;
+}
+
+button:hover{
+    color: rgb(255, 174, 0);
+}

@@ -1,0 +1,64 @@
+.container{
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    background: black;
+    position: relative;
+    top: 30vh;
+    left: 28vw;
+    width: 28%;
+    padding: 20px 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.user-information-wrapper{
+    width: 40%;
+    margin-bottom: 10%;
+}
+.user-info-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.user-info-div .label{
+    color: rgb(255, 174, 0)
+}
+.profile-img, .profile-img-wrapper{
+    width: 150px;
+    height: 150px;    
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-img-wrapper{
+    border: 3px solid rgb(255, 174, 0);
+    margin-bottom: 30px;
+}
+
+p{
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    font-size: 20px;
+}
+
+.user-info-buttons{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.user-info-buttons button{
+    border: 3px solid rgb(255, 174, 0);
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    padding: 5px 15px;
+}
+
+.user-info-buttons button:hover{
+    color: rgb(255, 174, 0);
+}

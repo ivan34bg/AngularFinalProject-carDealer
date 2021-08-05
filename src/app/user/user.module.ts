@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileViewComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileViewComponent
   ]
 })
 export class UserModule { }
