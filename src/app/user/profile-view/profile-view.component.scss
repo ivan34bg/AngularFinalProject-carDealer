@@ -1,16 +1,21 @@
 .container{
     color: white;
     font-family: 'Bebas Neue', cursive;
-    background: black;
-    position: relative;
-    top: 30vh;
-    left: 28vw;
-    width: 28%;
-    padding: 20px 0px;
-    border-radius: 10px;
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+}
+.profile-wrapper{
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding: 30px 0px;
 }
 .user-information-wrapper{
     width: 40%;

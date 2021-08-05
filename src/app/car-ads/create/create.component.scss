@@ -1,18 +1,19 @@
 .container{
     color: white;
     font-family: 'Bebas Neue', cursive;
-    background: black;
-    position: relative;
-    top: 10vh;
-    left: 22vw;
-    width: 40%;
-    padding: 40px 20px;
-    border-radius: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .create-ad{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: black;
+    border-radius: 10px;
+    padding: 50px 0px;
 }
 fieldset{
     display: flex;

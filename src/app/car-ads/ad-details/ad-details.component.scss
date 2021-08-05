@@ -1,0 +1,64 @@
+.login-prompt{
+    margin-bottom: 3%;
+    position: relative;
+    bottom: 3%;
+}
+.container{
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.image-wrapper img{
+    border-radius: 10px 10px 0px 0px;
+    height: 300px;
+    width: 600px;
+    object-fit: cover;
+}
+.image-wrapper{
+    height: 300px;
+    width: 600px;
+
+}
+.content-buttons-wrapper{
+    background-color: black;
+    color: white;
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px 20px;
+}
+
+.brand-model{
+    color: rgb(255, 174, 0);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(36, 36, 36);
+    margin-bottom: 10px;
+}
+
+.control-buttons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.control-buttons a{
+    border: 3px solid rgb(255, 174, 0);
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+
+.control-buttons a:hover{
+    color: rgb(255, 174, 0);
+}

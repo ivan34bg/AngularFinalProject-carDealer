@@ -1,0 +1,43 @@
+.container{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.log-in-prompt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(255, 174, 0);
+    width: 60%;
+    color: white;
+    margin-top: 2%;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: black;
+}
+.log-in-prompt p{
+    margin-top: 3%;
+}
+
+.log-in-prompt .buttons-wrapper{
+    color: white;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.log-in-prompt a{
+    border: 3px solid rgb(255, 174, 0);
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+.log-in-prompt a:hover{
+    color: rgb(255, 174, 0);
+}

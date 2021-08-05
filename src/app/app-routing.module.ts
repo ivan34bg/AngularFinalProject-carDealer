@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdDetailsComponent } from './car-ads/ad-details/ad-details.component';
+import { BrowseComponent } from './car-ads/browse/browse.component';
 import { CreateComponent } from './car-ads/create/create.component';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileViewComponent } from './user/profile-view/profile-view.component';
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileViewComponent
+  },
+  {
+    path: 'browse',
+    component: BrowseComponent
+  },
+  {
+    path: 'details',
+    component: AdDetailsComponent
   },
   {
     path: '**',

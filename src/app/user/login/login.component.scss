@@ -1,13 +1,16 @@
 .container{
     color: white;
     font-family: 'Bebas Neue', cursive;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login{
     background: black;
-    position: relative;
-    top: 30vh;
-    left: 28vw;
-    width: 28%;
-    padding: 20px 0px;
     border-radius: 10px;
+    padding: 40px 20px;
 }
 fieldset{
     display: flex;
