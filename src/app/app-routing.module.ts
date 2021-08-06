@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdDetailsComponent } from './car-ads/ad-details/ad-details.component';
 import { BrowseComponent } from './car-ads/browse/browse.component';
 import { CreateComponent } from './car-ads/create/create.component';
+import { FavoritesComponent } from './car-ads/favorites/favorites.component';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileViewComponent } from './user/profile-view/profile-view.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'details',
     component: AdDetailsComponent
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent
   },
   {
     path: '**',

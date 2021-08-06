@@ -5,6 +5,7 @@ import { BrowseComponent } from './browse/browse.component';
 import { RouterModule } from '@angular/router';
 import { AdDetailsComponent } from './ad-details/ad-details.component';
 import { CoreModule } from '../core/core.module';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 
@@ -12,7 +13,8 @@ import { CoreModule } from '../core/core.module';
   declarations: [
     CreateComponent,
     BrowseComponent,
-    AdDetailsComponent
+    AdDetailsComponent,
+    FavoritesComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { CoreModule } from '../core/core.module';
   exports: [
     CreateComponent,
     BrowseComponent,
-    AdDetailsComponent
+    AdDetailsComponent,
+    FavoritesComponent
   ]
 })
 export class CarAdsModule { }

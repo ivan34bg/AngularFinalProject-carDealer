@@ -45,8 +45,12 @@ label{
     margin: 10px 80px;
     align-items: center;
 }
+
 .first-group, .second-group, .third-group, .fourth-group{
     display: flex;
+}
+.image-field{
+    width: 77%;
 }
 .description{
     width: 83%;
