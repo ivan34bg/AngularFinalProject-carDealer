@@ -1,6 +1,6 @@
 <div class="header">
     <div class="logo-wrapper">
-        <a routerLink="/home">
+        <a routerLink="/browse">
             <p class='logo-text-first logo'>Car</p>
             <p class='logo-text-second logo'>Dealer.com</p>
         </a>
@@ -8,15 +8,15 @@
     <div class="nav-wrapper">
         <nav>
             <ul class="nav-links-list">
-                <li><a routerLink='login'>Login</a></li>
-                <li><a routerLink='register'>Register</a></li>
+                <li *ngIf="!isLogged"><a routerLink='login'>Login</a></li>
+                <li *ngIf="!isLogged"><a routerLink='register'>Register</a></li>
                 <li><a routerLink='browse'>Browse</a></li>
-                <li><a routerLink='create'>Create</a></li>
+                <li *ngIf="isLogged"><a routerLink='create'>Create</a></li>
             </ul>
-            <ul class="secondary-nav-links-list">
+            <ul *ngIf="isLogged" class="secondary-nav-links-list">
                 <li><a routerLink='profile'>Profile</a></li>
                 <li><a routerLink='favorites'>Favorites</a></li>
-                <li><a>Log out</a></li>
+                <li><a (click) = "logOut()">Log out</a></li>
             </ul>
         </nav>
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-login-prompt',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPromptComponent implements OnInit {
 
-  constructor() { }
+  get isLogged(){
+    return this.userService.isUserLogged();
+  }
+
+  constructor( private userService: UserService) { }
 
   ngOnInit(): void {
   }

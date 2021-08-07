@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowseComponent implements OnInit {
 
+  isActive = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleActive(){
+    if(!this.isActive){
+      console.log('added')
+    }
+    if(this.isActive){
+      console.log('removed')
+    }
+    this.isActive = !this.isActive
+  }
 }

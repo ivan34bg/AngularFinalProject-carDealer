@@ -14,4 +14,16 @@ export class User{
     addAdAsFavorite(){
         console.log('not implemented yet')
     }
+    getEmail(){
+        return this.email;
+    }
+    getUsername(){
+        return this.username;
+    }
+    getPassword(){
+        return this.password;
+    }
+    getPhoneNumber(){
+        return this.phoneNumber;
+    }
 }

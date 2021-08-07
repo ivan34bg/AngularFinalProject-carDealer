@@ -1,16 +1,22 @@
 <div class="container">
-    <form action="" class="login" method="POST">
+    <form #form='ngForm' action="" class="login" (ngSubmit) = "onSubmit(form)">
         <fieldset>
-            <div class="email field">
-                <label for="email">Email:</label>        
-                <input type="text" class="email-input" name="" id="">
+            <div class="form-group username field">
+                <label for="username">username:</label>        
+                <input type="text" class="username-input" name="username" id="username" #usernameInput="ngModel" ngModel required>
             </div>
-            <div class="password field">
+            <div class="form-group password field">
                 <label for="password">Password:</label>
-                <input type="password" class="password-input">
+                <input type="password" class="password-input" name="password" id="password" #passInput='ngModel' ngModel required>
             </div>
-            <button type="submit">Submit</button>
+            <button>Submit</button>
         </fieldset>
+        <div *ngIf='usernameInput.dirty && usernameInput.errors?.required'>
+            <p class="loginError" style="color: red; font-size: 18px;">Username is required to login!</p>
+        </div>
+        <div *ngIf='passInput.dirty && passInput.errors?.required'>
+            <p class="loginError" style="color: red; font-size: 18px;">Password is required to login!</p>
+        </div>
         <p class="register-center">
             Don't have an account yet?
             <a routerLink='/register'>Register</a>            

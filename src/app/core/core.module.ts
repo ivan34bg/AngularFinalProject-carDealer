@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { LoginPromptComponent } from './login-prompt/login-prompt.component';
+import { LocalStorage } from './injection-tokens';
 
 
 
@@ -18,6 +19,12 @@ import { LoginPromptComponent } from './login-prompt/login-prompt.component';
   exports: [
     HeaderComponent,
     LoginPromptComponent
+  ],
+  providers: [
+    {
+      provide: LocalStorage,
+      useValue: window.localStorage
+    }
   ]
 })
 export class CoreModule { }
