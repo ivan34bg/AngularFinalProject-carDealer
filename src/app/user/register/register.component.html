@@ -1,23 +1,55 @@
 <div class="container">
-    <form action="" class="register" method="POST">
+    <form #form='ngForm' action="" class="register" method="POST" (ngSubmit) = 'onSubmit(form)'>
         <fieldset>
             <div class="username field">
                 <label for="username">Username:</label>        
-                <input type="text" class="username-input" name="" id="">
+                <input type="text" class="username-input" name="username" id="" #usernameInput="ngModel" ngModel required [minlength] = '5'>
+                <div *ngIf="usernameInput.errors?.required && usernameInput.dirty">
+                    <p class="error">Username is required!</p>
+                </div>
+                <div *ngIf="usernameInput.errors?.minlength && usernameInput.dirty">
+                    <p class="error">Username should be at least 5 letters long!</p>
+                </div>
             </div>
             <div class="email field">
                 <label for="email">Email:</label>        
-                <input type="text" class="email-input" name="" id="">
+                <input type="text" class="email-input" name="email" id="" #emailInput="ngModel" ngModel required>                
+                <div *ngIf="emailInput.errors?.required && emailInput.dirty">
+                    <p class="error">Email is required!</p>
+                </div>
             </div>
+            <div class="phoneNum field">
+                <label for="phoneNum">Phone Number:</label>        
+                <input type="text" class="phoneNum-input" name="phoneNum" id="" #phoneNumInput="ngModel" ngModel required [minlength] = '10' [maxlength] = '10'>                
+                <div *ngIf="phoneNumInput.errors?.required && phoneNumInput.dirty">
+                    <p class="error">Phone number is required!</p>
+                </div>
+                <div *ngIf="phoneNumInput.errors?.minlength && phoneNumInput.dirty">
+                    <p class="error">Phone number is invalid!</p>
+                </div>
+            </div>
+
             <div class="password field">
                 <label for="password">Password:</label>
-                <input type="password" class="password-input">
+                <input type="password" class="password-input" name="password" #passInput='ngModel' ngModel required [minlength] = '5'>
+                <div *ngIf="passInput.errors?.required && passInput.dirty">
+                    <p class="error">Password is required!</p>
+                </div>
+                <div *ngIf="passInput.errors?.minlength && passInput.dirty">
+                    <p class="error">Password should have at least 5 symbols!</p>
+                </div>
             </div>
             <div class="repeat-password field">
                 <label for="repeat-password">Repeat Password:</label>
-                <input type="password" class="password-input">
+                <input type="password" class="rep-password-input" name="rep-password" #repPassInput='ngModel' ngModel required>
+                <div *ngIf="repPassInput.errors?.required && repPassInput.dirty">
+                    <p class="error">Password should be repeated!</p>
+                </div>
+                <div *ngIf="repPassInput.value != passInput.value && repPassInput.dirty && passInput.dirty">
+                    <p class="error">Passwords should match!</p>
+                </div>
             </div>
-            <button type="submit">Submit</button>
+            <button>Submit</button>
         </fieldset>
         <p class="register-center">
             Already have an account?

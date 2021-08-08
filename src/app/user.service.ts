@@ -23,6 +23,16 @@ export class UserService {
     }
   }
 
+  registerUser(user: User){
+    if(users.find(u => u.getUsername() == user.getUsername()) == null && users.find(u => u.getEmail() == user.getEmail()) == null){
+      users.push(user);
+      console.log(user.getPhoneNumber())
+      this.loginUser(user.getUsername(), user.getPassword());
+    }
+    else(console.log('no'))
+
+  }
+
   logoutUser(){
     this.localStorage.removeItem('username');
     this.isLogged = false;
