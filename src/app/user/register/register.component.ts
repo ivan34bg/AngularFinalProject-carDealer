@@ -11,13 +11,25 @@ import { UserService } from 'src/app/user.service';
 })
 export class RegisterComponent{
 
+  isUsernameUsed: boolean = false;
+  isEmailUsed: boolean = false;
+
+  get usernameUsed() {
+    return this.isUsernameUsed;
+  }
+
+  get emailUsed(){
+    return this.isEmailUsed;
+  }
+
   constructor(private userService: UserService) { }
 
   onSubmit(form: NgForm){
-    if(form.valid){
+    this.isUsernameUsed = this.userService.checkUsername(form.value.username);
+    this.isEmailUsed = this.userService.checkEmail(form.value.email);
+    if(form.valid && !this.isUsernameUsed && !this.isEmailUsed){
       let user  = new User(form.value.email, form.value.username, form.value.password, form.value.phoneNum)
       this.userService.registerUser(user);
     }
   }
-
 }

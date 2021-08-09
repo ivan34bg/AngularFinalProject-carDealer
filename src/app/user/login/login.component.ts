@@ -9,9 +9,18 @@ import { UserService } from 'src/app/user.service';
 })
 export class LoginComponent{
 
+  userExisting: boolean = true;
+
+  get userExists(){
+    return this.userExisting;
+  }
+
   constructor(private userService: UserService) { }
 
   onSubmit(form: NgForm): void{
-    this.userService.loginUser(form.value.username, form.value.password);
+
+    if(this.userService.loginUser(form.value.username, form.value.password) == false){
+      this.userExisting = false;
+    }
   }
 }

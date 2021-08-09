@@ -1,3 +1,9 @@
+<ng-template #takenUsername>
+    <p class="error">Username is taken!</p>
+</ng-template>
+<ng-template #takenEmail>
+    <p class="error">Email is taken!</p>
+</ng-template>
 <div class="container">
     <form #form='ngForm' action="" class="register" method="POST" (ngSubmit) = 'onSubmit(form)'>
         <fieldset>
@@ -10,6 +16,7 @@
                 <div *ngIf="usernameInput.errors?.minlength && usernameInput.dirty">
                     <p class="error">Username should be at least 5 letters long!</p>
                 </div>
+                <ng-container *ngTemplateOutlet='usernameUsed? takenUsername : null'></ng-container>
             </div>
             <div class="email field">
                 <label for="email">Email:</label>        
@@ -17,6 +24,7 @@
                 <div *ngIf="emailInput.errors?.required && emailInput.dirty">
                     <p class="error">Email is required!</p>
                 </div>
+                <ng-container *ngTemplateOutlet='emailUsed? takenEmail : null'></ng-container>
             </div>
             <div class="phoneNum field">
                 <label for="phoneNum">Phone Number:</label>        

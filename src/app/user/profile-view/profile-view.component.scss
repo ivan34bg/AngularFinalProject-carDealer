@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 .user-info-div .label{
     color: rgb(255, 174, 0)
@@ -66,4 +67,33 @@ p{
 
 .user-info-buttons button:hover{
     color: rgb(255, 174, 0);
+}
+
+input{
+    width: 250px;
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 18px;    
+    border: 3px solid rgb(255, 174, 0);
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+}
+
+.edit-view .user-info-div{
+    margin-top: 20px;
+}
+
+.edit-view .user-info-div:first-child{
+    margin-top: 0px;
+}
+
+.edit-view .user-info-buttons{
+    margin-top: 40px;
+    width: 100%;
+}
+
+.edit-view label{
+    margin-right: 10px;
 }

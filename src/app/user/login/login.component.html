@@ -1,3 +1,6 @@
+<ng-template #userDoesntExist>
+    <p class="loginError">Username or password is wrong!</p>
+</ng-template>
 <div class="container">
     <form #form='ngForm' action="" class="login" (ngSubmit) = "onSubmit(form)">
         <fieldset>
@@ -12,11 +15,12 @@
             <button>Submit</button>
         </fieldset>
         <div *ngIf='usernameInput.dirty && usernameInput.errors?.required'>
-            <p class="loginError" style="color: red; font-size: 18px;">Username is required to login!</p>
+            <p class="loginError">Username is required to login!</p>
         </div>
         <div *ngIf='passInput.dirty && passInput.errors?.required'>
-            <p class="loginError" style="color: red; font-size: 18px;">Password is required to login!</p>
+            <p class="loginError">Password is required to login!</p>
         </div>
+        <ng-container *ngTemplateOutlet="userExists? null : userDoesntExist"></ng-container>
         <p class="register-center">
             Don't have an account yet?
             <a routerLink='/register'>Register</a>            

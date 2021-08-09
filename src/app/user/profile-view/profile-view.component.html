@@ -1,26 +1,70 @@
-<div class="container">
-    <div class="profile-wrapper">
-        <div class="profile-img-wrapper" >
-            <img src="/assets/road.jpg" alt="" class="profile-img">
+<ng-template #editInfoView>
+    <form class="edit-view" #newProfileInfoForm = 'ngForm' (ngSubmit) = 'applyEdit(newProfileInfoForm)'>
+        <div class="new-phone-number-div user-info-div">
+            <label class="label phoneNum-label" for="phoneNum">Phone number:</label>
+            <input type="text" class="new-phone-number-input user-info-input" name = 'phoneNum' [ngModel]='phoneNum' #newPhoneNum = 'ngModel' [minlength]='10' [maxlength]='10'>
         </div>
-        <div class="user-information-wrapper">
-            <div class="username user-info-div">
-                <p class="label username-label">Username:</p>
-                <p class="username user-info">test</p>
+        <div class="phoneNum-errors errors">
+            <div *ngIf='newPhoneNum.dirty && newPhoneNum.errors?.minlength'>
+                <p class="error">Phone number should be 10 symbols long!</p>
             </div>
-            <div class="email user-info-div">
-                <p class="label email-label">E-mail:</p>
-                <p class="email user-info">test</p>
+        </div>
+        <div class="new-password-div user-info-div">
+            <label class="label passowrd-label" for="password">New password:</label>
+            <input type="password" class="new-password-input user-info-input" name="password" ngModel #newPassword = 'ngModel' [minlength]='5'>
+        </div>
+        <div class="password-errors errors">
+            <div *ngIf='newPassword.dirty && newPassword.errors?.minlength'>
+                <p class="error">New password should be at least 5 symbols long!</p>
             </div>
-            <div class="phoneNum user-info-div">
-                <p class="label phoneNum-label">Phone number:</p>
-                <p class="phoneNum user-info">test</p>
-            </div>
+        </div>
+        <div class="new-password-repeat-div user-info-div">
+            <label class="label passowrd-label" for="repPass">Repeat new password:</label>
+            <input type="password" class="new-password-repeat-input user-info-input" name="repPass" ngModel #newPasswordRepeat = 'ngModel' [minlength]='5'>
+        </div>
+        <div *ngIf='newPasswordRepeat.dirty && newPasswordRepeat.value !== newPassword.value'>
+            <p class="error">Passwords should match!</p>
+        </div>
+        <div class="old-password-div user-info-div">
+            <label class="label passowrd-label" for="oldPassword">Old password:</label>
+            <input type="password" class="old-password-input user-info-input" name="oldPassword" ngModel #oldPassword = 'ngModel' required>
+        </div>
+        <div *ngIf='oldPassword.errors?.required'>
+            <p class="error">Old password is required to perform the change!</p>
         </div>
         <div class="user-info-buttons">
-            <button class="manage-profile">Manage Profile</button>
-            <button class="delete-profile">Delete Profile</button>
+            <button type = 'submit' class="apply-profile-changes">Apply changes</button>
+            <button (click) = 'editProfileInfo()' class="cancel-profile-changes">Cancel</button>
         </div>
+    </form>
+</ng-template>
+<ng-template #regularProfileView>
+    <div class="profile-img-wrapper" >
+        <img src="/assets/road.jpg" alt="" class="profile-img">
+    </div>
+    <div class="user-information-wrapper">
+        <div class="username user-info-div">
+            <p class="label username-label">Username:</p>
+            <p class="username user-info">{{username}}</p>
+        </div>
+        <div class="email user-info-div">
+            <p class="label email-label">E-mail:</p>
+            <p class="email user-info">{{email}}</p>
+        </div>
+        <div class="phoneNum user-info-div">
+            <p class="label phoneNum-label">Phone number:</p>
+            <p class="phoneNum user-info">{{phoneNum}}</p>
+        </div>
+    </div>
+    <div class="user-info-buttons">
+        <button (click) = 'editProfileInfo()' class="manage-profile">Manage Profile</button>
+        <button class="delete-profile">Delete Profile</button>
+    </div>
+</ng-template>
+
+<div class="container">
+    <div class="profile-wrapper">
+        <ng-container *ngTemplateOutlet="isEditing ? editInfoView : regularProfileView"></ng-container>
     </div>
 
 </div>

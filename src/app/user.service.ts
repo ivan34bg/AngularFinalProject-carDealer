@@ -14,13 +14,15 @@ export class UserService {
 
   constructor( @Inject(LocalStorage) private localStorage: Window['localStorage'], private router: Router) {}
 
-  loginUser(username: string, password: string){
+  loginUser(username: string, password: string): boolean{
     this.loggedUser = users.find(u => u.getUsername() == username && u.getPassword() == password);
     if( this.loggedUser != undefined){
       this.localStorage.setItem('username', this.loggedUser.getUsername())
       this.isLogged = true;
       this.router.navigate(['/browse']);
+      return true;
     }
+    return false;
   }
 
   registerUser(user: User){
@@ -41,5 +43,34 @@ export class UserService {
 
   isUserLogged(): boolean{
     return this.isLogged;
+  }
+
+  getLoggedUser(){
+    return this.loggedUser;
+  }
+
+  checkIfPasswordMatches(password: string): boolean{
+    if(this.loggedUser?.getPassword() === password){
+      return true;
+    }
+    return false;
+  }
+
+  checkUsername(username: string): boolean{
+    if(users.find(u => u.getUsername() === username) !== undefined){
+      return true;
+    }
+    return false;
+  }
+
+  checkEmail(email: string){
+    if(users.find(u => u.getEmail() === email) !== undefined){
+      return true;
+    }
+    return false;
+  }
+
+  changeUserInfo(user: User){
+    users.find(u => u.getUsername() == this.localStorage.getItem('username'))?.changeUserInfo(user.getPassword(), user.getPhoneNumber());
   }
 }

@@ -26,4 +26,8 @@ export class User{
     getPhoneNumber(){
         return this.phoneNumber;
     }
+    changeUserInfo(password: string, phoneNumber: string){
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+    }
 }
