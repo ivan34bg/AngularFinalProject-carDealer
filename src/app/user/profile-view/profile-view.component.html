@@ -32,6 +32,9 @@
         <div *ngIf='oldPassword.errors?.required'>
             <p class="error">Old password is required to perform the change!</p>
         </div>
+        <div *ngIf='doesOldPassMatch == false'>
+            <p class="error">Old password is wrong.</p> 
+        </div>
         <div class="user-info-buttons">
             <button type = 'submit' class="apply-profile-changes">Apply changes</button>
             <button (click) = 'editProfileInfo()' class="cancel-profile-changes">Cancel</button>

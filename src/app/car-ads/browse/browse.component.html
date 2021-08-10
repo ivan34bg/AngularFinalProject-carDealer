@@ -1,3 +1,10 @@
+<ng-template #isNew>
+    <p class="isNew">New</p>
+</ng-template>
+<ng-template #isUsed>
+    <p class="isNew">Used</p>
+</ng-template>
+
 <!--
 <ng-template #isActiveTemp>
     <button (click) = 'toggleActive()'><i class="fas fa-star"></i></button>
@@ -13,63 +20,19 @@
 <div class="container">
     <app-login-prompt></app-login-prompt>
     <div class="ads-place">
-        <div class="ad-wrapper">
-            <a routerLink="/details">
+        <div class="ad-wrapper" *ngFor='let carAd of carAds'>
+            <a routerLink='/details/{{carAd.getId()}}'>
                 <div class="ad-image-wrapper ad">
-                    <img class="ad-image" src="/assets/car.jpeg" alt="">
+                    <img class="ad-image" src={{carAd.getImageLink()}} alt="">
                 </div>
                 <div class="ad-content-wrapper ad">
                     <div class="ad-content-main-text">
-                        <p class="brand-model">Subaru Impreza 22B</p>
-                        <p class="location">Sofia</p>
-                        <p class="mileage">100.000 km</p>
+                        <p class="brand-model">{{carAd.getBrand()}} {{carAd.getModel()}}</p>
+                        <p class="location">{{carAd.getLocation()}}</p>
+                        <p class="mileage">{{carAd.getMileage()}} km</p>
+                        <ng-container *ngTemplateOutlet="carAd.getIsNew()? isNew: isUsed"></ng-container>
                     </div>
-                    <p class="price">100000 BGN</p>
-                </div>
-            </a>
-        </div>
-        <div class="ad-wrapper">
-            <a routerLink="/details">
-                <div class="ad-image-wrapper ad">
-                    <img class="ad-image" src="/assets/car.jpeg" alt="">
-                </div>
-                <div class="ad-content-wrapper ad">
-                    <div class="ad-content-main-text">
-                        <p class="brand-model">Subaru Impreza 22B</p>
-                        <p class="location">Sofia</p>
-                        <p class="mileage">100.000 km</p>
-                    </div>
-                    <p class="price">100000 BGN</p>
-                </div>
-            </a>
-        </div>
-        <div class="ad-wrapper">
-            <a routerLink="/details">
-                <div class="ad-image-wrapper ad">
-                    <img class="ad-image" src="/assets/car.jpeg" alt="">
-                </div>
-                <div class="ad-content-wrapper ad">
-                    <div class="ad-content-main-text">
-                        <p class="brand-model">Subaru Impreza 22B</p>
-                        <p class="location">Sofia</p>
-                        <p class="mileage">100.000 km</p>
-                    </div>
-                    <p class="price">100000 BGN</p>
-                </div>
-            </a>
-        </div>
-        <div class="ad-wrapper">
-            <a routerLink="/details">
-                <div class="ad-image-wrapper ad">
-                    <img class="ad-image" src="/assets/car.jpeg" alt="">
-                </div>
-                <div class="ad-content-wrapper ad">
-                    <div class="ad-content-main-text">
-                        <p class="brand-model">Subaru Impreza 22B</p>
-                        <p class="location">Sofia</p>
-                        <p class="mileage">100.000 km</p>
-                    </div>
-                    <p class="price">100000 BGN</p>
+                    <p class="price">{{carAd.getPrice()}} BGN</p>
                 </div>
             </a>
         </div>

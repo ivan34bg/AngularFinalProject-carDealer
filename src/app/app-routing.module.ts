@@ -39,7 +39,7 @@ const routes: Routes = [
     component: BrowseComponent
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: AdDetailsComponent
   },
   {

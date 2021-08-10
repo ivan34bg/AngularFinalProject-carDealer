@@ -21,7 +21,7 @@ fieldset{
     align-items: center;
     border: 0px;
 }
-button, input, textarea{
+button, input, textarea, .is-car-new-select{
     border: 3px solid rgb(255, 174, 0);
     font-family: 'Bebas Neue', cursive;
     border-radius: 50px;
@@ -44,6 +44,7 @@ label{
     flex-direction: column;
     margin: 10px 80px;
     align-items: center;
+    flex-basis: 50%;
 }
 
 .first-group, .second-group, .third-group, .fourth-group{
@@ -76,4 +77,21 @@ label{
 
 button:hover{
     color: rgb(255, 174, 0);
+}
+
+.fourth-group{
+    width: 100%;
+}
+.is-car-new-select{
+    width: 120%;
+    height: 45px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border-color: rgb(255, 174, 0);
+    padding: 0px 20px;
+}
+.is-car-new-select option{
+    font-size: 18px;
+    color: black;
 }

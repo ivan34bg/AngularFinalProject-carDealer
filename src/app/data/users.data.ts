@@ -1,8 +1,5 @@
-import { User } from "../models/user.module";
+import { User } from "../models/user.model";
 
-let user = new User('test', 'test', 'test', 'test');
-
-let users: User[] = [];
-users.push(user);
+let users: User[] = [new User(1, 'test@test.com', 'test', 'test', '0888888888')];
 
 export{users};

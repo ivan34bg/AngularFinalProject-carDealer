@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorage } from './core/injection-tokens';
 import { users } from './data/users.data';
-import { User } from './models/user.module';
+import { User } from './models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class UserService {
 
   private isLogged:boolean = false;
   private loggedUser: User | undefined
+  private currentId: number = 2;
 
   constructor( @Inject(LocalStorage) private localStorage: Window['localStorage'], private router: Router) {}
 
@@ -18,6 +19,7 @@ export class UserService {
     this.loggedUser = users.find(u => u.getUsername() == username && u.getPassword() == password);
     if( this.loggedUser != undefined){
       this.localStorage.setItem('username', this.loggedUser.getUsername())
+      this.localStorage.setItem('userId', String(this.loggedUser.getUserId()))
       this.isLogged = true;
       this.router.navigate(['/browse']);
       return true;
@@ -25,14 +27,13 @@ export class UserService {
     return false;
   }
 
-  registerUser(user: User){
-    if(users.find(u => u.getUsername() == user.getUsername()) == null && users.find(u => u.getEmail() == user.getEmail()) == null){
+  registerUser(email: string, username: string, password: string, phoneNumber: string){
+    if(users.find(u => u.getUsername() == username) == null && users.find(u => u.getEmail() == email) == null){
+      let user = new User(this.currentId, email, username, password, phoneNumber);
+      this.currentId++;
       users.push(user);
-      console.log(user.getPhoneNumber())
       this.loginUser(user.getUsername(), user.getPassword());
     }
-    else(console.log('no'))
-
   }
 
   logoutUser(){
@@ -72,5 +73,9 @@ export class UserService {
 
   changeUserInfo(user: User){
     users.find(u => u.getUsername() == this.localStorage.getItem('username'))?.changeUserInfo(user.getPassword(), user.getPhoneNumber());
+  }
+
+  findPhoneNumById(id: number){
+    return users.find(u => u.getUserId() === id)?.getPhoneNumber();
   }
 }

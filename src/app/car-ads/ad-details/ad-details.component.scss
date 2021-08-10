@@ -1,7 +1,7 @@
 .login-prompt{
-    margin-bottom: 3%;
     position: relative;
-    bottom: 3%;
+    top: 0%;
+    margin-bottom: 50px;
 }
 .container{
     font-family: 'Bebas Neue', cursive;
@@ -20,6 +20,7 @@
 .image-wrapper{
     height: 300px;
     width: 600px;
+    max-width: 600px;
 
 }
 .content-buttons-wrapper{
@@ -27,6 +28,8 @@
     color: white;
     border-radius: 0px 0px 10px 10px;
     padding: 20px 20px;
+    width: 560px;
+    max-width: 600px;
 }
 
 .brand-model{
@@ -61,4 +64,16 @@
 
 .control-buttons a:hover{
     color: rgb(255, 174, 0);
+}
+
+.description{
+    flex-wrap: wrap;
+    width: 99%;
+    height: 90px;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
 }

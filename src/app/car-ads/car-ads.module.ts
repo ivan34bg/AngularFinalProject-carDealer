@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AdDetailsComponent } from './ad-details/ad-details.component';
 import { CoreModule } from '../core/core.module';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
   imports: [
     CommonModule,
     RouterModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ],
   exports: [
     CreateComponent,

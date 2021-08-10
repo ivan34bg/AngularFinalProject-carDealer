@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CarAdService } from 'src/app/car-ad.service';
+import { carAd } from 'src/app/models/car-ad.model';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-ad-details',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdDetailsComponent implements OnInit {
 
-  constructor() { }
+  carAdId: string | undefined;
+  currentCarAd: carAd | undefined;
+  adPosterPhoneNum: string | undefined;
+
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private router: Router,
+    private carAdService: CarAdService,
+    private userService: UserService) { }
+
+  get isUserLogged(){
+    return this.userService.isUserLogged();
+  }
 
   ngOnInit(): void {
+    this.carAdId = this.activatedRoute.snapshot.params.id;
+    this.currentCarAd = this.carAdService.getCarById(Number(this.carAdId));
+    if(this.currentCarAd == null){
+      this.router.navigate(['/browse'])
+    }
+    else{
+      this.adPosterPhoneNum = this.userService.findPhoneNumById(this.currentCarAd.getPosterId());
+    }
   }
 
 }

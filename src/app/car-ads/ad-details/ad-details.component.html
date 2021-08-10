@@ -1,44 +1,58 @@
+<ng-template #carIsUsed>
+    <p class="isNew">No</p>
+</ng-template>
+<ng-template #carIsNew>
+    <p class="isNew">Yes</p>
+</ng-template>
+
+<ng-template #userIsLogged>
+    <p class="phoneNumber">{{adPosterPhoneNum}}</p>
+</ng-template>
+<ng-template #userIsNotLogged>
+    <p class="phoneNumber">Login to see the number</p>
+</ng-template>
+
 <div class="container">
     <app-login-prompt class="login-prompt"></app-login-prompt>
     <div class="ad-wrapper">
         <div class="image-wrapper">
-            <img src="/assets/car.jpeg" alt="">
+            <img src={{currentCarAd!.getImageLink()}} alt="">
         </div>
         <div class="content-buttons-wrapper">
             <div class="content-wrapper">
-                <p class="brand-model">Subaru Impreza 22b</p>
+                <p class="brand-model">{{currentCarAd!.getBrand()}} {{currentCarAd!.getModel()}}</p>
                 <div class="year-wrapper wrapper">
                     <p class="year-label label">Year:</p>
-                    <p class="year">2000</p>
+                    <p class="year">{{currentCarAd!.getYear()}}</p>
                 </div>
                 <div class="mileage-wrapper wrapper">
                     <p class="mileage-label label">Mileage:</p>
-                    <p class="mileage">100,000</p>
+                    <p class="mileage">{{currentCarAd!.getMileage()}}</p>
                 </div>
                 <div class="horsepower-wrapper wrapper">
                     <p class="horsepower-label label">Horsepower:</p>
-                    <p class="horsepower">300</p>
-                </div>
-                <div class="description-wrapper wrapper">
-                    <p class="description-label label">Description:</p>
-                    <p class="description"></p>
+                    <p class="horsepower">{{currentCarAd!.getHorsepower()}}</p>
                 </div>
                 <div class="price-wrapper wrapper">
                     <p class="price-label label">Price:</p>
-                    <p class="price">100000 BGN</p>
+                    <p class="price">{{currentCarAd!.getPrice()}} BGN</p>
                 </div>
                 <div class="phoneNumber-wrapper wrapper">
                     <p class="phoneNumber-label label">Phone number of seller:</p>
-                    <p class="phoneNumber">test</p>
+                    <ng-container *ngTemplateOutlet="isUserLogged? userIsLogged : userIsNotLogged"></ng-container>
                 </div>
                 <div class="location-wrapper wrapper">
                     <p class="location-label label">Location of vehicle</p>
-                    <p class="location">Sofia</p>
+                    <p class="location">{{currentCarAd!.getLocation()}}</p>
                 </div>
                 <div class="isNew-wrapper wrapper">
                     <p class="isNew-label label">Is the vehicle new:</p>
-                    <p class="isNew">No</p>
+                    <ng-container *ngTemplateOutlet="currentCarAd!.getIsNew()? carIsNew : carIsUsed"></ng-container>
+                </div>                
+                <div class="description-wrapper wrapper">
+                    <p class="description-label label">Description:</p>
                 </div>
+                <textarea class="description" cols="10" rows="5" readonly>{{currentCarAd!.getDescription()}}</textarea>
             </div>
             <div class="control-buttons">
                 <a class="edit-ad">Edit Ad</a>

@@ -1,53 +1,56 @@
 <div class="container">
-    <form action="" class="create-ad" method="POST">
+    <form #createAnAd = 'ngForm' action="" class="create-ad" method="POST" (ngSubmit) = 'onSubmit(createAnAd)'>
         <fieldset>
             <div class="image-field field">
                 <label for="image">Image Link:</label>
-                <input type="text" class="image-link">
+                <input type="text" class="image-link" name="imageLink" #imageLink = 'ngModel' ngModel required>
             </div>
             <div class="first-group">
                 <div class="brand field">
                     <label for="brand">Brand:</label>
-                    <input type="text" class="brand-input">
+                    <input type="text" class="brand-input" name="brandInput" #brandInput = 'ngModel' ngModel required>
                 </div>
                 <div class="model field">
                     <label for="model">Model:</label>
-                    <input type="text" class="model-input">
+                    <input type="text" class="model-input" name="modelInput" #modelInput = 'ngModel' ngModel required>
                 </div>
             </div>
             <div class="second-group">
                 <div class="year field">
                     <label for="year">Year:</label>
-                    <input type="number" class="year-input">
+                    <input type="number" class="year-input" name="yearInput" #yearInput = 'ngModel' ngModel required>
                 </div>
                 <div class="mileage field">
                     <label for="mileage">Mileage:</label>
-                    <input type="number" class="mileage-input">
+                    <input type="number" class="mileage-input" name="mileageInput" #mileageInput = 'ngModel' ngModel required>
                 </div>
             </div>
             <div class="third-group">
                 <div class="horsepower field">
                     <label for="horsepower">Horsepower:</label>
-                    <input type="number" class="horsepower-input">
+                    <input type="number" class="horsepower-input" name="powerInput" #powerInput = 'ngModel' ngModel required>
                 </div>
                 <div class="price field">
                     <label for="price">Price:</label>
-                    <input type="number" class="price-input">
+                    <input type="number" class="price-input" name="priceInput" #priceInput = 'ngModel' ngModel required>
                 </div>
             </div>
             <div class="fourth-group">
-                <div class="phone-number field">
-                    <label for="phoneNum">Phone Number:</label>
-                    <input type="text" class="phoneNum-input">
+                <div class="is-car-new field">
+                    <label for="is-car-new">Is the car new:</label>
+                    <select name="is-car-new" class="is-car-new-select" name="isCarNewSelect" #isNewSelect = 'ngModel' ngModel required>
+                        <option value='yes'>Car is new</option>
+                        <option value='no'>Car is used</option>
+                    </select>
                 </div>
                 <div class="location field">
                     <label for="location">Location:</label>
-                    <input type="text" class="Location-input">
+                    <input type="text" class="Location-input" name="locationInput" #locationInput = 'ngModel' ngModel required>
                 </div>
             </div>
             <div class="description field">
                 <label for="description">Description:</label>
-                <textarea type="text" class="description-input" rows="2"></textarea>
+                <textarea type="text" class="description-input" rows="2" name="descriptionInput" #descriptionInput = 'ngModel' ngModel required></textarea>
             </div>
         </fieldset>
         <div class="create-buttons">
