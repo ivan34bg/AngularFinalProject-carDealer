@@ -5,13 +5,17 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { FormsModule } from '@angular/forms';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ProfileInfoComponent } from './profile-info/profile-info.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    EditProfileComponent,
+    ProfileInfoComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import { FormsModule } from '@angular/forms';
   exports: [
     LoginComponent,
     RegisterComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    ProfileInfoComponent,
+    EditProfileComponent
   ]
 })
 export class UserModule { }

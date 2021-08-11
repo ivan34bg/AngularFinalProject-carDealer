@@ -52,4 +52,16 @@ export class carAd{
     getPosterId(){
         return this.posterId;
     }
+
+    editAd(imageLink: string, brand: string, model: string, year: number, mileage: number, horsepower: number, price: number, description: string, location: string){
+        this.imageLink = imageLink;
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+        this.horsepower = horsepower;
+        this.price = price;
+        this.description = description;
+        this.location = location;
+    }
 }

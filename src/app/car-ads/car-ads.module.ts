@@ -7,6 +7,8 @@ import { AdDetailsComponent } from './ad-details/ad-details.component';
 import { CoreModule } from '../core/core.module';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { FormsModule } from '@angular/forms';
+import { EditAdComponent } from './edit-ad/edit-ad.component';
+import { AdDetailsViewComponent } from './ad-details-view/ad-details-view.component';
 
 
 
@@ -15,19 +17,23 @@ import { FormsModule } from '@angular/forms';
     CreateComponent,
     BrowseComponent,
     AdDetailsComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    EditAdComponent,
+    AdDetailsViewComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     CoreModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     CreateComponent,
     BrowseComponent,
     AdDetailsComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    AdDetailsViewComponent
   ]
 })
 export class CarAdsModule { }

@@ -38,6 +38,7 @@ export class UserService {
 
   logoutUser(){
     this.localStorage.removeItem('username');
+    this.localStorage.removeItem('userId');
     this.isLogged = false;
     this.router.navigate(['/login']);
   }

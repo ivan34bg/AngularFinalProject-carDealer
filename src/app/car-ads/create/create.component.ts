@@ -15,7 +15,7 @@ export class CreateComponent {
   onSubmit(form: NgForm){
     if(form.valid){
       let isNew: boolean
-      if(form.value.isNew === 'yes'){
+      if(form.value.isCarNewSelect == 'yes'){
         isNew = true;
       }
       else{

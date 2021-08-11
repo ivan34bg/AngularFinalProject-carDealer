@@ -1,0 +1,99 @@
+.container{
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.profile-wrapper{
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding: 30px 0px;
+}
+.user-information-wrapper{
+    width: 40%;
+    margin-bottom: 10%;
+}
+.user-info-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-info-div .label{
+    color: rgb(255, 174, 0)
+}
+.profile-img, .profile-img-wrapper{
+    width: 150px;
+    height: 150px;    
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-img-wrapper{
+    border: 3px solid rgb(255, 174, 0);
+    margin-bottom: 30px;
+}
+
+p{
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    font-size: 20px;
+}
+
+.user-info-buttons{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.user-info-buttons button{
+    border: 3px solid rgb(255, 174, 0);
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    padding: 5px 15px;
+}
+
+.user-info-buttons button:hover{
+    color: rgb(255, 174, 0);
+}
+
+input{
+    width: 250px;
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 18px;    
+    border: 3px solid rgb(255, 174, 0);
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+}
+
+.edit-view .user-info-div{
+    margin-top: 20px;
+}
+
+.edit-view .user-info-div:first-child{
+    margin-top: 0px;
+}
+
+.edit-view .user-info-buttons{
+    margin-top: 40px;
+    width: 100%;
+}
+
+.edit-view label{
+    margin-right: 10px;
+}

@@ -1,0 +1,54 @@
+<div class="container">
+    <form #editAd = 'ngForm' action="" class="edit-ad" method="POST" (ngSubmit)='onSubmit(editAd)' >
+        <fieldset>
+            <div class="image-field field">
+                <label for="image">Image Link:</label>
+                <input type="text" class="image-link" name="imageLink" #imageLink = 'ngModel' [ngModel]='currentAd!.getImageLink()' required>
+            </div>
+            <div class="first-group">
+                <div class="brand field">
+                    <label for="brand">Brand:</label>
+                    <input type="text" class="brand-input" name="brandInput" #brandInput = 'ngModel' [ngModel]='currentAd!.getBrand()' required>
+                </div>
+                <div class="model field">
+                    <label for="model">Model:</label>
+                    <input type="text" class="model-input" name="modelInput" #modelInput = 'ngModel' [ngModel]='currentAd!.getModel()' required>
+                </div>
+            </div>
+            <div class="second-group">
+                <div class="year field">
+                    <label for="year">Year:</label>
+                    <input type="number" class="year-input" name="yearInput" #yearInput = 'ngModel' [ngModel]='currentAd!.getYear()' required>
+                </div>
+                <div class="mileage field">
+                    <label for="mileage">Mileage:</label>
+                    <input type="number" class="mileage-input" name="mileageInput" #mileageInput = 'ngModel' [ngModel]='currentAd!.getMileage()' required>
+                </div>
+            </div>
+            <div class="third-group">
+                <div class="horsepower field">
+                    <label for="horsepower">Horsepower:</label>
+                    <input type="number" class="horsepower-input" name="powerInput" #powerInput = 'ngModel' [ngModel]='currentAd!.getHorsepower()' required>
+                </div>
+                <div class="price field">
+                    <label for="price">Price:</label>
+                    <input type="number" class="price-input" name="priceInput" #priceInput = 'ngModel' [ngModel]='currentAd!.getPrice()' required>
+                </div>
+            </div>
+            <div class="fourth-group">
+                <div class="location field">
+                    <label for="location">Location:</label>
+                    <input type="text" class="Location-input" name="locationInput" #locationInput = 'ngModel' [ngModel]='currentAd!.getLocation()' required>
+                </div>
+            </div>
+            <div class="description field">
+                <label for="description">Description:</label>
+                <textarea type="text" class="description-input" rows="2" name="descriptionInput" #descriptionInput = 'ngModel' [ngModel]='currentAd!.getDescription()' required></textarea>
+            </div>
+        </fieldset>
+        <div *ngIf='imageLink.errors?.required || brandInput.errors?.required || modelInput.errors?.required || yearInput.errors?.required || mileageInput.errors?.required || powerInput.errors?.required || priceInput.errors?.required || locationInput.errors?.required || descriptionInput.errors?.required'>
+            <p class="error">Everything is required!</p>
+        </div>
+        <button class="submit-button" type="submit">Submit</button>
+    </form>
+</div>

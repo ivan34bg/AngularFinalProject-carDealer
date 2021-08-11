@@ -18,7 +18,6 @@ export class LoginComponent{
   constructor(private userService: UserService) { }
 
   onSubmit(form: NgForm): void{
-
     if(this.userService.loginUser(form.value.username, form.value.password) == false){
       this.userExisting = false;
     }

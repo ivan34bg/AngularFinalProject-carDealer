@@ -24,4 +24,13 @@ export class CarAdService {
     this.currentCarAdId++;
     this.router.navigate(['/browse']);
   }
+
+  editOldAd(imageLink: string, brand: string, model: string, year: number, mileage: number, horsepower: number, price: number, description: string, location: string, carAdId: number){
+    carAds.find(a => a.getId() === carAdId)?.editAd(imageLink, brand, model, year, mileage, horsepower, price, description, location);
+  }
+
+  deleteAnAd(adId: number){
+    let index = carAds.findIndex(a => a.getId() === adId);
+    carAds.splice(index, 1);
+  }
 }

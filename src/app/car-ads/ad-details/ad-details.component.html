@@ -54,9 +54,9 @@
                 </div>
                 <textarea class="description" cols="10" rows="5" readonly>{{currentCarAd!.getDescription()}}</textarea>
             </div>
-            <div class="control-buttons">
-                <a class="edit-ad">Edit Ad</a>
-                <a class="delete-ad">Delete Ad</a>
+            <div *ngIf="currentIdOfUser === currentCarAd!.getPosterId()" class="control-buttons">
+                <a routerLink="edit" class="edit-ad">Edit Ad</a>
+                <a (click) = 'deleteAnAd()' class="delete-ad">Delete Ad</a>
             </div>
         </div>
     </div>
