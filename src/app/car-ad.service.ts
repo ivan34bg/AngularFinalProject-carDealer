@@ -33,4 +33,13 @@ export class CarAdService {
     let index = carAds.findIndex(a => a.getId() === adId);
     carAds.splice(index, 1);
   }
+
+  arrOfFavorites(favoriteAdsIds: number[]){
+    let arr: carAd[] = [];
+    for(let id of favoriteAdsIds){
+      if(carAds.find(a => a.getId() == id) != null)
+      arr.push(carAds.find(a => a.getId() == id)!)
+    }
+    return arr;
+  }
 }

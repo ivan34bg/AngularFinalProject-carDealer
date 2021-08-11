@@ -29,7 +29,7 @@ export class UserService {
 
   registerUser(email: string, username: string, password: string, phoneNumber: string){
     if(users.find(u => u.getUsername() == username) == null && users.find(u => u.getEmail() == email) == null){
-      let user = new User(this.currentId, email, username, password, phoneNumber);
+      let user = new User(this.currentId, email, username, password, phoneNumber, []);
       this.currentId++;
       users.push(user);
       this.loginUser(user.getUsername(), user.getPassword());

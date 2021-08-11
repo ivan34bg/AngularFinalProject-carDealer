@@ -46,7 +46,7 @@ export class EditProfileComponent implements OnInit {
         this.userService.getLoggedUser()!.getEmail(), 
         this.userService.getLoggedUser()!.getUsername(),
         form.value.password, 
-        form.value.phoneNum));
+        form.value.phoneNum, []));
         this.doesPassMatch = true;
         this.router.navigate(['/profile']);
     }
@@ -55,7 +55,7 @@ export class EditProfileComponent implements OnInit {
         this.userService.getLoggedUser()!.getEmail(), 
         this.userService.getLoggedUser()!.getUsername(),
         form.value.password, 
-        this.userService.getLoggedUser()!.getPhoneNumber()));
+        this.userService.getLoggedUser()!.getPhoneNumber(), []));
         this.doesPassMatch = true;
         this.router.navigate(['/profile']);
     }
@@ -64,7 +64,7 @@ export class EditProfileComponent implements OnInit {
         this.userService.getLoggedUser()!.getEmail(), 
         this.userService.getLoggedUser()!.getUsername(),
         this.userService.getLoggedUser()!.getPassword(), 
-        form.value.phoneNum));
+        form.value.phoneNum, []));
         this.doesPassMatch = true;
         this.router.navigate(['/profile']);
     }

@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+
 }
 
 .ads-place{
@@ -26,12 +27,15 @@
 
 .ad-wrapper a{
     display: flex;
+    text-decoration: none;
+    color: white;
 }
 
 .ad-wrapper .ad-image, .ad-wrapper .ad-image-wrapper{
     width: 450px;
     height: 230px;
     border-radius: 10px 0px 0px 10px;
+    object-fit: cover;
 }
 
 .ad-wrapper .ad-content-wrapper{

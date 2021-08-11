@@ -1,15 +1,18 @@
 export class User{        
-    private favoriteAdsIds: string[] | undefined
     constructor(
         private id: number,
         private email: string,
         private username: string,
         private password: string,
         private phoneNumber: string,
+        private favoriteAdsIds: number[]
     ){}
 
-    addAdAsFavorite(){
-        console.log('not implemented yet')
+    addAdAsFavorite(adId: number){
+        this.favoriteAdsIds.push(adId);
+    }
+    removeAdFromFavorites(adId: number){
+        this.favoriteAdsIds.splice(this.favoriteAdsIds.indexOf(adId), 1);
     }
     getUserId(){
         return this.id;
@@ -25,6 +28,9 @@ export class User{
     }
     getPhoneNumber(){
         return this.phoneNumber;
+    }
+    getFavoriteAds(){
+        return this.favoriteAdsIds;
     }
     changeUserInfo(password: string, phoneNumber: string){
         this.password = password;

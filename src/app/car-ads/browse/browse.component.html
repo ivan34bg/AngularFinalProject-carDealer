@@ -5,15 +5,9 @@
     <p class="isNew">Used</p>
 </ng-template>
 
+
+
 <!--
-<ng-template #isActiveTemp>
-    <button (click) = 'toggleActive()'><i class="fas fa-star"></i></button>
-</ng-template>
-
-<ng-template #isNotActiveTemp>
-    <button (click) = 'toggleActive()'><i class="far fa-star"></i></button>
-</ng-template>
-
 <ng-container *ngTemplateOutlet="isActive ? isActiveTemp : isNotActiveTemp"></ng-container> <-- za vsqka obqva
 -->
 
@@ -25,16 +19,31 @@
                 <div class="ad-image-wrapper ad">
                     <img class="ad-image" src={{carAd.getImageLink()}} alt="">
                 </div>
-                <div class="ad-content-wrapper ad">
-                    <div class="ad-content-main-text">
-                        <p class="brand-model">{{carAd.getBrand()}} {{carAd.getModel()}}</p>
-                        <p class="location">{{carAd.getLocation()}}</p>
-                        <p class="mileage">{{carAd.getMileage()}} km</p>
-                        <ng-container *ngTemplateOutlet="carAd.getIsNew()? isNew: isUsed"></ng-container>
-                    </div>
-                    <p class="price">{{carAd.getPrice()}} BGN</p>
-                </div>
             </a>
+                <div class="ad-content-wrapper ad">
+                    <a routerLink='/details/{{carAd.getId()}}'>
+                        <div class="ad-content-main-text">
+                            <p class="brand-model">{{carAd.getBrand()}} {{carAd.getModel()}}</p>
+                            <p class="location">{{carAd.getLocation()}}</p>
+                            <p class="mileage">{{carAd.getMileage()}} km</p>
+                            <ng-container *ngTemplateOutlet="carAd.getIsNew()? isNew: isUsed"></ng-container>
+                        </div>
+                    </a>
+                    <div class="favoriteAndPrice">
+                        <div class="wrapper">
+                            <ng-container *ngIf='isUserLogged' class="favorite-wrapper">
+                                <ng-template #isFavorite>
+                                    <button (click) = "removeFavorite(carAd.getId())"  class="favorite-button"><i class="fas fa-star"></i></button>
+                                </ng-template>
+                                <ng-template #isNotFavorite>
+                                    <button (click) = "addFavorite(carAd.getId())" class="favorite-button"><i class="far fa-star"></i></button>
+                                </ng-template>
+                                <ng-container *ngTemplateOutlet="loggedUser!.getFavoriteAds().includes(carAd.getId())? isFavorite : isNotFavorite "></ng-container>
+                            </ng-container>
+                        </div>
+                        <p class="price">{{carAd.getPrice()}} BGN</p>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
