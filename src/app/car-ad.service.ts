@@ -42,4 +42,13 @@ export class CarAdService {
     }
     return arr;
   }
+
+  arrOfMyAds(): carAd[]{
+    let userId = Number(this.localStorage.getItem('userId'));
+    return carAds.filter(a => a.getPosterId() === userId);
+  }
+
+  returnPosterOfAd(adId: number): number{
+    return carAds.find(a => a.getId() === adId)?.getPosterId()!;
+  }
 }

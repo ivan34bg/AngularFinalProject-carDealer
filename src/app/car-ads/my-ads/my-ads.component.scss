@@ -1,0 +1,105 @@
+.container{
+    background-color: black;
+    color: white;
+    width: 90%;
+    position: fixed;
+    min-height: 100vh;
+    height: 100%;
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+
+}
+
+.ads-place{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ads-place .ad-wrapper{
+    width: 50%;
+    margin: 25px 0;
+}
+
+.ad-wrapper a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+}
+
+.ad-wrapper .ad-image, .ad-wrapper .ad-image-wrapper{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px 0px 0px 10px;
+    object-fit: cover;
+}
+
+.ad-wrapper .ad-content-wrapper{
+    background-color: rgb(36, 36, 36);
+    border-radius: 0px 10px 10px 0px;
+    width: 30%;
+    padding: 5px 10px;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+}
+
+.ad-content-wrapper .ad-content-main-text{
+    height: 80%;
+}
+
+.ad-content-wrapper .brand-model{
+    font-size: 30px;
+    color: rgb(255, 174, 0);
+}
+
+.ad-content-wrapper .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.ad-content-wrapper .info label{
+    margin-right: 5px;
+}
+
+.ad-content-wrapper .location{
+    margin-bottom: 12px;
+}
+
+.ad-content-wrapper .price{
+    font-size: 30px;
+    text-align: end;
+}
+
+.ad-content-main-text .group-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.group-wrapper .first-group{
+    flex-basis: 20%;
+}
+
+.no-posted-ads{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.no-posted-ads p, .no-posted-ads a{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.no-posted-ads a{
+    color: rgb(255, 174, 0);
+}
+
+.no-posted-ads a:hover{
+    color: white;
+}

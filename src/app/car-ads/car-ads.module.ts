@@ -9,6 +9,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { FormsModule } from '@angular/forms';
 import { EditAdComponent } from './edit-ad/edit-ad.component';
 import { AdDetailsViewComponent } from './ad-details-view/ad-details-view.component';
+import { MyAdsComponent } from './my-ads/my-ads.component';
 
 
 
@@ -19,7 +20,8 @@ import { AdDetailsViewComponent } from './ad-details-view/ad-details-view.compon
     AdDetailsComponent,
     FavoritesComponent,
     EditAdComponent,
-    AdDetailsViewComponent
+    AdDetailsViewComponent,
+    MyAdsComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { AdDetailsViewComponent } from './ad-details-view/ad-details-view.compon
     BrowseComponent,
     AdDetailsComponent,
     FavoritesComponent,
-    AdDetailsViewComponent
+    AdDetailsViewComponent,
+    MyAdsComponent
   ]
 })
 export class CarAdsModule { }

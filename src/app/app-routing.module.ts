@@ -6,6 +6,9 @@ import { BrowseComponent } from './car-ads/browse/browse.component';
 import { CreateComponent } from './car-ads/create/create.component';
 import { EditAdComponent } from './car-ads/edit-ad/edit-ad.component';
 import { FavoritesComponent } from './car-ads/favorites/favorites.component';
+import { MyAdsComponent } from './car-ads/my-ads/my-ads.component';
+import { LoggedInGuardGuard } from './core/guards/logged-in-guard.guard';
+import { RightUserGuardGuard } from './core/guards/right-user-guard.guard';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileInfoComponent } from './user/profile-info/profile-info.component';
@@ -16,11 +19,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
-  },
-  {
-    path: 'home',
-    redirectTo: 'login'
+    redirectTo: 'browse'
   },
   {
     path: 'login',
@@ -32,11 +31,18 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateComponent
+    component: CreateComponent,
+    canActivate: [LoggedInGuardGuard]
+  },
+  {
+    path:'myAds',
+    component: MyAdsComponent,
+    canActivate: [LoggedInGuardGuard]
   },
   {
     path: 'profile',
     component: ProfileViewComponent,
+    canActivate: [LoggedInGuardGuard],
     children: [
       {
         path: '',
@@ -44,7 +50,8 @@ const routes: Routes = [
       },
       {
         path: 'edit',
-        component: EditProfileComponent
+        component: EditProfileComponent,
+        canActivate: [LoggedInGuardGuard]
       }
     ]
   },
@@ -55,6 +62,7 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: AdDetailsViewComponent,
+    
     children: [
       {
         path: '',
@@ -62,18 +70,20 @@ const routes: Routes = [
       },
       {
         path: 'edit',
-        component: EditAdComponent
+        component: EditAdComponent,
+        canActivate: [RightUserGuardGuard] 
       }
     ]
   },
   {
     path: 'favorites',
-    component: FavoritesComponent
+    component: FavoritesComponent,
+    canActivate: [LoggedInGuardGuard]
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'register'
+    redirectTo: 'browse'
   }
 ];
 

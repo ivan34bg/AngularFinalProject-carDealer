@@ -13,7 +13,10 @@
 
 <div class="container">
     <app-login-prompt></app-login-prompt>
-    <div class="ads-place">
+    <div class="no-ads" *ngIf="carAds.length == 0">
+        <p>No ads available!</p>
+    </div>
+    <div class="ads-place" *ngIf="carAds.length > 0">
         <div class="ad-wrapper" *ngFor='let carAd of carAds'>
             <a routerLink='/details/{{carAd.getId()}}'>
                 <div class="ad-image-wrapper ad">
@@ -38,7 +41,10 @@
                                 <ng-template #isNotFavorite>
                                     <button (click) = "addFavorite(carAd.getId())" class="favorite-button"><i class="far fa-star"></i></button>
                                 </ng-template>
-                                <ng-container *ngTemplateOutlet="loggedUser!.getFavoriteAds().includes(carAd.getId())? isFavorite : isNotFavorite "></ng-container>
+                                <div *ngIf="carAd.getPosterId() !== loggedUser!.getUserId()">
+                                    <ng-container *ngTemplateOutlet="loggedUser!.getFavoriteAds().includes(carAd.getId())? isFavorite : isNotFavorite "></ng-container>
+                                </div>
+
                             </ng-container>
                         </div>
                         <p class="price">{{carAd.getPrice()}} BGN</p>

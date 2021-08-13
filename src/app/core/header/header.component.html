@@ -14,8 +14,9 @@
                 <li *ngIf="isLogged"><a routerLink='create'>Create</a></li>
             </ul>
             <ul *ngIf="isLogged" class="secondary-nav-links-list">
-                <li><a routerLink='profile'>Profile</a></li>
+                <li><a routerLink='myAds'>My Ads</a></li>
                 <li><a routerLink='favorites'>Favorites</a></li>
+                <li><a routerLink='profile'>Profile</a></li>
                 <li><a (click) = "logOut()">Log out</a></li>
             </ul>
         </nav>

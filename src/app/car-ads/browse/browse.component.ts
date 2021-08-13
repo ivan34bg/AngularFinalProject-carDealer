@@ -20,14 +20,12 @@ export class BrowseComponent{
   addFavorite(adId: number){
     if(this.isUserLogged){
       this.loggedUser?.addAdAsFavorite(adId);
-      console.log(this.loggedUser?.getFavoriteAds())
     }
   }
 
   removeFavorite(adId: number){
     if(this.isUserLogged){
       this.loggedUser?.removeAdFromFavorites(adId);
-      console.log(this.loggedUser?.getFavoriteAds())
     }
   }
 

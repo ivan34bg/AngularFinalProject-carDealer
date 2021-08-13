@@ -13,6 +13,11 @@
 
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 .ads-place{
     width: 100%;
     display: flex;
@@ -25,7 +30,7 @@
     margin: 15px 0;
 }
 
-.ad-wrapper a{
+.ad-wrapper{
     display: flex;
     text-decoration: none;
     color: white;
@@ -68,14 +73,10 @@
     margin-bottom: 12px;
 }
 
-.ad-content-wrapper .price{
-    font-size: 30px;
-    text-align: end;
-}
-
 .ad-content-main-text .group-wrapper{
     display: flex;
     flex-direction: row;
+    text-decoration: none;
 }
 
 .group-wrapper .first-group{
@@ -115,4 +116,40 @@
 .second-group .description::-webkit-scrollbar-thumb{
     background-color: transparent;
     border: 2px solid rgb(255, 174, 0);
+}
+
+.no-favorites{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.no-favorites p,.no-favorites a{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.no-favorites a{
+    color: rgb(255, 174, 0);
+}
+
+.no-favorites a:hover{
+    color: white;
+}
+
+.title-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title-button button{
+    border: 3px solid rgb(255, 174, 0);
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    font-size: 18px;
+    margin-top: 5px;
 }

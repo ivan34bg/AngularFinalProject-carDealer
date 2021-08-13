@@ -1,21 +1,16 @@
 <div class="container">
-    <div class="no-favorites" *ngIf='favoriteAdsOfUser!.length == 0'>
-        <p>You don't have favorite ads. Go to <a routerLink='/browse'>browse</a> and check some new ads out!</p>
+    <div class="no-posted-ads" *ngIf = 'arrOfMyAds.length == 0'>
+        <p>You haven't posted any ads. Go to <a routerLink='/create'>create</a> to create a new ad. It's free!</p>
     </div>
-    <div class="ads-place" *ngIf='favoriteAdsOfUser!.length > 0'>
-        <div class="ad-wrapper" *ngFor = 'let ad of favoriteAdsOfUser'>
+    <div class="ads-place" *ngIf = 'arrOfMyAds.length > 0'>
+        <div class="ad-wrapper" *ngFor='let ad of arrOfMyAds'>
             <a routerLink="/details/{{ad.getId()}}">
                 <div class="ad-image-wrapper ad">
-                    <img class="ad-image" src={{ad.getImageLink()}} alt="">
+                    <img class="ad-image" src= {{ad.getImageLink()}}>
                 </div>
-            </a>
-            <div class="ad-content-wrapper ad">
-                <div class="ad-content-main-text">
-                    <div class="title-button">
+                <div class="ad-content-wrapper ad">
+                    <div class="ad-content-main-text">
                         <p class="brand-model">{{ad.getBrand()}} {{ad.getModel()}}</p>
-                        <button class="remove-ad-from-favorite" (click)='removeFavorite(ad.getId())'>Remove from favorites</button>
-                    </div>
-                    <a routerLink="/details/{{ad.getId()}}">
                         <p class="location">{{ad.getLocation()}}</p> 
                         <div class="group-wrapper">
                             <div class="first-group">
@@ -32,19 +27,13 @@
                                     <p class="year">{{ad.getYear()}}</p>
                                 </div>
                             </div>
-                            <div class="second-group">
-                                <div class="description-group info">
-                                    <label for="description">Description:</label>
-                                    <textarea class="description" cols="10" rows="5" readonly>{{ad.getDescription()}}</textarea>
-                                </div>
-                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <p class="price">{{ad.getPrice()}} BGN</p>
-            </div>
+            </a>
         </div>
     </div>
 </div>
+
 
 
