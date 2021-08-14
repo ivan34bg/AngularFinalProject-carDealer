@@ -31,7 +31,7 @@
                 <input type="password" class="old-password-input user-info-input" name="oldPassword" ngModel #oldPassword = 'ngModel' required>
             </div>
             <div *ngIf='oldPassword.errors?.required'>
-                <p class="error">Old password is required to perform the change!</p>
+                <p class="error">Old password is required to perform any change!</p>
             </div>
             <div *ngIf='doesOldPassMatch == false'>
                 <p class="error">Old password is wrong.</p> 

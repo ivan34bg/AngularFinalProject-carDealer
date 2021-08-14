@@ -23,14 +23,13 @@
 }
 .user-info-div{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 .user-info-div .label{
-    color: rgb(255, 174, 0)
+    color: rgb(255, 174, 0);
+    font-size: 18px;
 }
-
 p{
     margin-block-end: 0px;
     margin-block-start: 0px;

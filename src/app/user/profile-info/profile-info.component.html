@@ -1,24 +1,25 @@
 <div class="container">
     <div class="profile-wrapper">
         <div class="profile-img-wrapper" >
-            <img src="/assets/road.jpg" alt="" class="profile-img">
+            <img src={{loggedUser!.getImageLink()}} alt="" class="profile-img">
         </div>
         <div class="user-information-wrapper">
             <div class="username user-info-div">
                 <p class="label username-label">Username:</p>
-                <p class="username user-info">{{username}}</p>
+                <p class="username user-info">{{loggedUser!.getUsername()}}</p>
             </div>
             <div class="email user-info-div">
                 <p class="label email-label">E-mail:</p>
-                <p class="email user-info">{{email}}</p>
+                <p class="email user-info">{{loggedUser!.getEmail()}}</p>
             </div>
             <div class="phoneNum user-info-div">
                 <p class="label phoneNum-label">Phone number:</p>
-                <p class="phoneNum user-info">{{phoneNum}}</p>
+                <p class="phoneNum user-info">{{loggedUser!.getPhoneNumber()}}</p>
             </div>
         </div>
         <div class="user-info-buttons">
-            <button routerLink='./edit' class="manage-profile">Manage Profile</button>
+            <button routerLink='./editProfileInfo' class="manage-profile">Manage Profile</button>
+            <button routerLink='./changeProfilePicture' class="manage-profile">Change Profile Picture</button>
         </div>
     </div>
 </div>

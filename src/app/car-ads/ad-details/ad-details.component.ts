@@ -4,6 +4,7 @@ import { CarAdService } from 'src/app/car-ad.service';
 import { LocalStorage } from 'src/app/core/injection-tokens';
 import { carAd } from 'src/app/models/car-ad.model';
 import { UserService } from 'src/app/user.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-ad-details',
@@ -21,7 +22,8 @@ export class AdDetailsComponent implements OnInit {
     private router: Router,
     private carAdService: CarAdService,
     private userService: UserService,
-    @Inject(LocalStorage) private localStorage: Window['localStorage']
+    @Inject(LocalStorage) private localStorage: Window['localStorage'],
+    private location: Location
     ) { }
 
   loggedInUserId: number = Number(this.localStorage.getItem('userId'));
@@ -47,7 +49,7 @@ export class AdDetailsComponent implements OnInit {
 
   deleteAnAd(){
     this.carAdService.deleteAnAd(Number(this.carAdId));
-    this.router.navigate(['browse'])
+    this.location.back()
   }
 
 }

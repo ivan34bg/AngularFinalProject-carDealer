@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="profile-edit-wrapper">
+        <form class="edit-view" #newProfilePicForm = 'ngForm' (ngSubmit)='onSubmit(newProfilePicForm)'>
+            <div class="new-profile-pic-div user-info-div">
+                <label class="label profile-pic-link-label" for="profilePicLink">New profile picture link:</label>
+                <input type="text" class="new-profile-pic-link-input user-info-input" name="profilePicLink" ngModel #newProfilePicLink = 'ngModel'>
+            </div>
+            <div class="user-info-buttons">
+                <button type = 'submit' class="apply-profile-changes">Apply changes</button>
+                <button routerLink='/profile' class="cancel-profile-changes">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+

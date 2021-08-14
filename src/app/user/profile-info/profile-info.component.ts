@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 
 @Component({
@@ -8,12 +8,8 @@ import { UserService } from 'src/app/user.service';
 })
 export class ProfileInfoComponent {
 
-  constructor(private userService: UserService) { }
+  loggedUser = this.userService.getLoggedUser();
 
-  username = this.userService.getLoggedUser()?.getUsername();
-  email = this.userService.getLoggedUser()?.getEmail();
-  get phoneNum(){
-    return this.userService.getLoggedUser()?.getPhoneNumber();
-  }
+  constructor(private userService: UserService) { }
 
 }

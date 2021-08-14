@@ -9,6 +9,7 @@ import { FavoritesComponent } from './car-ads/favorites/favorites.component';
 import { MyAdsComponent } from './car-ads/my-ads/my-ads.component';
 import { LoggedInGuardGuard } from './core/guards/logged-in-guard.guard';
 import { RightUserGuardGuard } from './core/guards/right-user-guard.guard';
+import { ChangeProfilePictureComponent } from './user/change-profile-picture/change-profile-picture.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileInfoComponent } from './user/profile-info/profile-info.component';
@@ -49,9 +50,13 @@ const routes: Routes = [
         component: ProfileInfoComponent
       },
       {
-        path: 'edit',
+        path: 'editProfileInfo',
         component: EditProfileComponent,
         canActivate: [LoggedInGuardGuard]
+      },
+      {
+        path: 'changeProfilePicture',
+        component: ChangeProfilePictureComponent
       }
     ]
   },

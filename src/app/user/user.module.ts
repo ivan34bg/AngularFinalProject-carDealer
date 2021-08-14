@@ -7,6 +7,7 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { FormsModule } from '@angular/forms';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
+import { ChangeProfilePictureComponent } from './change-profile-picture/change-profile-picture.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
     RegisterComponent,
     ProfileViewComponent,
     EditProfileComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    ChangeProfilePictureComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
     RegisterComponent,
     ProfileViewComponent,
     ProfileInfoComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ChangeProfilePictureComponent
   ]
 })
 export class UserModule { }

@@ -1,4 +1,5 @@
-export class User{        
+export class User{  
+    private imageLink: string;      
     constructor(
         private id: number,
         private email: string,
@@ -6,7 +7,9 @@ export class User{
         private password: string,
         private phoneNumber: string,
         private favoriteAdsIds: number[]
-    ){}
+    ){
+        this.imageLink = '/assets/pfp.png';
+    }
 
     addAdAsFavorite(adId: number){
         this.favoriteAdsIds.push(adId);
@@ -31,6 +34,12 @@ export class User{
     }
     getFavoriteAds(){
         return this.favoriteAdsIds;
+    }
+    getImageLink(){
+        return this.imageLink;
+    }
+    setImageLink(imageLink: string){
+        this.imageLink = imageLink;
     }
     changeUserInfo(password: string, phoneNumber: string){
         this.password = password;
