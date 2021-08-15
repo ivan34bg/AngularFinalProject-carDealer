@@ -7,6 +7,7 @@ import { CreateComponent } from './car-ads/create/create.component';
 import { EditAdComponent } from './car-ads/edit-ad/edit-ad.component';
 import { FavoritesComponent } from './car-ads/favorites/favorites.component';
 import { MyAdsComponent } from './car-ads/my-ads/my-ads.component';
+import { InAccountGuardGuard } from './core/guards/in-account-guard.guard';
 import { LoggedInGuardGuard } from './core/guards/logged-in-guard.guard';
 import { RightUserGuardGuard } from './core/guards/right-user-guard.guard';
 import { ChangeProfilePictureComponent } from './user/change-profile-picture/change-profile-picture.component';
@@ -24,11 +25,13 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [InAccountGuardGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [InAccountGuardGuard]
   },
   {
     path: 'create',
